@@ -1,4 +1,6 @@
 <template>
+<div>
+    <div>Uso o seguinte e-mail: {{ email }}</div>
     <p>Usa as seguintes tecnologias para backend: </p>
     <ul>
         <li v-for="(linguagens, index) in backend" v-bind:key="index">{{linguagens}}</li>
@@ -8,11 +10,16 @@
     <ul>
         <li v-for="linguagens in front" v-bind:key="linguagens.id"> {{linguagens.linguagem}}</li>
     </ul>
+</div>
+    
 </template>
 
 <script>
 export default {
     name:'Lista',
+    props:{
+        email: String
+    },
     data(){
         return{
             backend: ['Node', 'PHP', 'C#', 'Java', 'Python'],
